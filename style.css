@@ -1,0 +1,450 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #34363d;
+    --cream: #eee7e1;
+    --white: #ffffff;
+    --text: #383a40;
+    --muted: #777777;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e5e5e5;
+    color: var(--text);
+    padding: 30px 15px;
+    line-height: 1.6;
+}
+
+/* CONTAINER */
+.cv-container {
+    width: 100%;
+    max-width: 1024px;
+    min-height: 1448px;
+    margin: auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 33.33% 66.67%;
+    grid-template-rows: 220px 1fr;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 25px #00000020;
+}
+
+/* HEADER */
+.header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    background: var(--dark);
+    color: white;
+    padding: 38px 9.5%;
+    gap: 13.5%;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 33.33%;
+    height: 63px;
+    background: var(--dark);
+    clip-path: polygon(0 0, 100% 0, 48.5% 100%);
+    z-index: 2;
+}
+
+/* FOTO */
+.profile-photo {
+    width: 147px;
+    height: 147px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #d0d0d0;
+}
+
+.profile-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* NAMA */
+.header-text {
+    padding-top: 9px;
+    min-width: 0;
+}
+
+.header-text h1 {
+    font-size: clamp(26px, 4vw, 49px);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.header-text p {
+    font-size: 23px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    background: var(--cream);
+    padding: 90px 28px 40px 38px;
+    min-width: 0;
+}
+
+.side-section {
+    margin-bottom: 40px;
+}
+
+.side-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+
+/* KONTAK */
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: white;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.contact-item a {
+    color: var(--text);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover,
+.portfolio-link:hover {
+    color: #777;
+}
+
+/* PENDIDIKAN */
+.education-item {
+    position: relative;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    border-left: 2px solid #c9c0b9;
+    margin-left: 5px;
+}
+
+.education-item:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 5px;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dark);
+}
+
+.education-item h3 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.education-item p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.year {
+    display: block;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* KETERAMPILAN */
+.skill-item {
+    margin-bottom: 17px;
+}
+
+.skill-item p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.skill-item span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+/* KONTEN UTAMA */
+.content {
+    grid-column: 2;
+    grid-row: 2;
+    background: white;
+    padding: 92px 38px 45px;
+    min-width: 0;
+}
+
+.content-section {
+    margin-bottom: 43px;
+}
+
+.content-section h2 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.4;
+    border-bottom: 2px solid #333;
+    padding-bottom: 3px;
+    margin-bottom: 14px;
+}
+
+.content-section > p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* PENGALAMAN */
+.experience-item {
+    margin-bottom: 28px;
+}
+
+.experience-item h3 {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.company {
+    font-size: 16px !important;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 14px !important;
+    color: var(--muted);
+    margin-bottom: 7px;
+}
+
+.experience-item ul {
+    padding-left: 28px;
+    margin-top: 8px;
+}
+
+.experience-item li {
+    padding-left: 2px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* BIDANG MINAT */
+.interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.interest-list span {
+    padding: 7px 12px;
+    background: var(--cream);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* PORTOFOLIO */
+.portfolio-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--text);
+    font-size: 16px;
+    overflow-wrap: anywhere;
+    text-decoration: underline;
+}
+
+/* TABLET */
+@media (max-width: 800px) {
+    body {
+        padding: 15px;
+    }
+
+    .cv-container {
+        grid-template-columns: 35% 65%;
+        min-height: 1200px;
+    }
+
+    .header {
+        padding: 35px 6%;
+        gap: 7%;
+    }
+
+    .profile-photo {
+        width: 115px;
+        height: 115px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .header-text p {
+        font-size: 18px;
+    }
+
+    .sidebar {
+        padding: 85px 20px 30px;
+    }
+
+    .content {
+        padding: 85px 25px 35px;
+    }
+
+    .side-section h2,
+    .content-section h2 {
+        font-size: 20px;
+    }
+}
+
+/* HP */
+@media (max-width: 560px) {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .cv-container {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        box-shadow: none;
+    }
+
+    .header {
+        min-height: 190px;
+        padding: 25px 20px;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .header::after {
+        width: 100%;
+        height: 25px;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+
+    .profile-photo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .header-text h1 {
+        font-size: 25px;
+        margin-bottom: 7px;
+    }
+
+    .header-text p {
+        font-size: 15px;
+    }
+
+    .sidebar {
+        order: 2;
+        padding: 35px 25px;
+    }
+
+    .content {
+        order: 1;
+        padding: 40px 25px 20px;
+    }
+
+    .side-section {
+        margin-bottom: 30px;
+    }
+
+    .content-section {
+        margin-bottom: 32px;
+    }
+
+    .content-section > p {
+        font-size: 15px;
+    }
+
+    .experience-item li {
+        font-size: 14px;
+    }
+}
+
+/* CETAK A4 */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html,
+    body {
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .cv-container {
+        width: 210mm;
+        max-width: none;
+        min-height: 297mm;
+        margin: 0;
+        grid-template-columns: 33.33% 66.67%;
+        grid-template-rows: 220px 1fr;
+        box-shadow: none;
+    }
+
+    .header {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .content {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
